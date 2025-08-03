@@ -79,14 +79,18 @@
   </nav>
   <div class="container">
     <h2>פוסטים אחרונים</h2>
-    {% for post in site.posts limit:3 %}
-      <div class="post">
-        <h2>{{ post.title }}</h2>
-        <p><small>{{ post.date | date: "%d/%m/%Y" }}</small></p>
-        <p>{{ post.excerpt }}</p>
-        <a href="{{ post.url }}">קרא עוד</a>
-      </div>
-    {% endfor %}
+    <div class="post">
+      <h2>פוסט לדוגמה 1</h2>
+      <p><small>03/08/2025</small></p>
+      <p>זהו פוסט לדוגמה עם מידע עסקי. קראו עוד כדי ללמוד!</p>
+      <a href="#">קרא עוד</a>
+    </div>
+    <div class="post">
+      <h2>פוסט לדוגמה 2</h2>
+      <p><small>02/08/2025</small></p>
+      <p>טיפים חדשים לעסקים קטנים.</p>
+      <a href="#">קרא עוד</a>
+    </div>
   </div>
   <footer>
     <p>&copy; 2025 הבלוג העסקי שלך. כל הזכויות שמורות.</p>
