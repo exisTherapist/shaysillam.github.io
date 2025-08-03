@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>בלוג עסקי</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      direction: rtl;
+      text-align: right;
+    }
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x500');
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    nav {
+      background-color: #333;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      color: #ddd;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .post {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .post h2 {
+      margin-top: 0;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>הבלוג העסקי שלך</h1>
+    <p>מידע, טיפים וחדשות לעסקים</p>
+  </header>
+  <nav>
+    <a href="/">דף הבית</a>
+    <a href="/about">אודות</a>
+    <a href="/posts">פוסטים</a>
+    <a href="/contact">צור קשר</a>
+  </nav>
+  <div class="container">
+    <h2>פוסטים אחרונים</h2>
+    {% for post in site.posts limit:3 %}
+      <div class="post">
+        <h2>{{ post.title }}</h2>
+        <p><small>{{ post.date | date: "%d/%m/%Y" }}</small></p>
+        <p>{{ post.excerpt }}</p>
+        <a href="{{ post.url }}">קרא עוד</a>
+      </div>
+    {% endfor %}
+  </div>
+  <footer>
+    <p>&copy; 2025 הבלוג העסקי שלך. כל הזכויות שמורות.</p>
+  </footer>
+</body>
+</html>
